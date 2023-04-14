@@ -1,0 +1,54 @@
+#include "menu.h"
+#include "ui_menu.h"
+#include "stock.h"
+#include "f_necess.h"
+#include "emp.h"
+#include "donneur.h"
+#include "event.h"
+
+menu::menu(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::menu)
+{
+    ui->setupUi(this);
+}
+
+menu::~menu()
+{
+    delete ui;
+}
+
+void menu::on_pushButton_clicked()
+{
+    stock s;
+    s.setModal(true);
+    s.exec();
+}
+
+void menu::on_pushButton_2_clicked()
+{
+   f_necess f;
+   f.setModal(true);
+   f.exec();
+}
+
+void menu::on_pushButton_3_clicked()
+{
+    emp e;
+    e.setModal(true);
+    e.exec();
+}
+
+void menu::on_pushButton_4_clicked()
+{
+    donneur d;
+    d.setModal(true);
+    d.exec();
+}
+
+void menu::on_pushButton_5_clicked()
+{
+    event e;
+    e.setModal(true);
+    e.exec();
+}
